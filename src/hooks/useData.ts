@@ -5,11 +5,9 @@ import { CovidData } from '../services/api/types';
 
 const useData = () => {
   const [covidData, setCovidData] = useState<CovidData>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    setLoading(true);
-
     const getData = async () => {
       try {
         const data = await api.covidData();
