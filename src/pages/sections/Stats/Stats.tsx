@@ -25,7 +25,7 @@ const Stats: FC<Props> = ({ confirmed, deaths, recovered, className }) => {
         <Stat
           className="stats__stat"
           theme="total"
-          count={confirmed.toLocaleString('tr-TR')}
+          count={confirmed?.toLocaleString('tr-TR')}
           text="Kişiye Tanı Kondu"
         />
         <div className="stats__info">
@@ -39,7 +39,7 @@ const Stats: FC<Props> = ({ confirmed, deaths, recovered, className }) => {
         <Stat
           className="stats__stat"
           theme="death"
-          count={deaths.toLocaleString('tr-TR')}
+          count={deaths?.toLocaleString('tr-TR')}
           text="Kişi Vefat Etti"
         />
         <div className="stats__info">
@@ -53,7 +53,7 @@ const Stats: FC<Props> = ({ confirmed, deaths, recovered, className }) => {
         <Stat
           className="stats__stat"
           theme="recovered"
-          count={recovered.toLocaleString('tr-TR')}
+          count={recovered?.toLocaleString('tr-TR')}
           text="Kişi İyileşti"
         />
         <div className="stats__info">
