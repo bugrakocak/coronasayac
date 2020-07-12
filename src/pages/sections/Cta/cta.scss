@@ -1,0 +1,58 @@
+@import '../../../styles/abstracts/index';
+
+.cta {
+  padding: pad(2xlarge) 0;
+
+  &__inner {
+    display: flex;
+
+    @include media-breakpoint-up(lg) {
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__multiply {
+    color: $color-white;
+    font-weight: 700;
+    line-height: (48 / 32);
+
+    @include media-breakpoint-up(lg) {
+      flex: 1;
+      font-size: px-to-rem(32px);
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: px-to-rem(28px);
+      text-align: center;
+    }
+  }
+
+  &__multiply-number {
+    color: $color-alizarin-crimson;
+
+    @include media-breakpoint-up(lg) {
+      font-size: px-to-rem(36px);
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: px-to-rem(28px);
+    }
+  }
+
+  &__button {
+    @include media-breakpoint-up(lg) {
+      margin-left: gap(2xlarge);
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-top: gap();
+    }
+  }
+}

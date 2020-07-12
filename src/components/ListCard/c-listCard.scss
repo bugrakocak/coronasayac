@@ -1,0 +1,21 @@
+@import '../../styles/abstracts/index';
+
+.c-list-card {
+  padding: pad(large) pad() pad() pad();
+  background-color: $color-primary;
+  border-radius: px-to-rem(16px);
+
+  &__number {
+    margin-top: gap(medium);
+    color: $color-white;
+    font-size: px-to-rem(32px);
+    font-weight: 700;
+    line-height: (39 / 32);
+  }
+
+  &__text {
+    margin-top: gap(small);
+    color: $color-white;
+    line-height: (28 / 18);
+  }
+}

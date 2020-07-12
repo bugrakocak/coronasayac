@@ -1,0 +1,34 @@
+@import '../../styles/abstracts/index';
+
+.c-stat {
+  padding: pad(large) pad(xlarge);
+  background-color: $color-mirage;
+  text-align: center;
+
+  &__number {
+    color: var(--stat-color, #{$color-white});
+    font-size: px-to-rem(64px);
+    font-weight: 900;
+    line-height: (72 / 64);
+  }
+
+  &__text {
+    margin-top: gap(xsmall);
+    color: $color-white;
+    font-size: $g-font-size-medium;
+    font-weight: 700;
+    line-height: (28 / 18);
+  }
+
+  &--total {
+    --stat-color: #{$color-persimmon};
+  }
+
+  &--death {
+    --stat-color: #{$color-alizarin-crimson};
+  }
+
+  &--recovered {
+    --stat-color: #{$color-shamrock};
+  }
+}

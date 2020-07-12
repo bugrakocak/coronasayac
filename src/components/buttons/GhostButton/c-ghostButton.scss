@@ -1,0 +1,40 @@
+@import '../../../styles/abstracts/index';
+
+.c-ghostButton {
+  display: inline-block;
+  padding: pad(2xsmall) pad(small);
+  border: 1px solid var(--ghost-button-theme-color, #{$color-white});
+  background-color: transparent;
+  border-radius: px-to-rem(4px);
+  color: var(--ghost-button-theme-color, #{$color-white});
+  font-size: $g-font-size-small;
+  font-weight: 700;
+  line-height: (28 / 18);
+  outline: 0;
+  text-align: center;
+  transition: all 0.2s;
+
+  &:hover,
+  &.is-active {
+    background-color: var(--ghost-button-theme-color, #{$color-white});
+    color: $color-white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &:hover {
+    transform: translateY(px-to-rem(-2px));
+  }
+
+  &--primary {
+    --ghost-button-theme-color: #{$color-persimmon};
+  }
+
+  &--secondary {
+    --ghost-button-theme-color: #{$color-alizarin-crimson};
+  }
+
+  &--tertiary {
+    --ghost-button-theme-color: #{$color-shamrock};
+  }
+}

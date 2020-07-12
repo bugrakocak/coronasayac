@@ -1,0 +1,17 @@
+@import '../../../styles/abstracts/index';
+
+.charts {
+  padding: pad(2xlarge) 0;
+  background-color: $color-mirage;
+
+  &__chart-wrapper {
+    padding-bottom: pad(small);
+    overflow-x: auto;
+  }
+
+  &__chart {
+    width: px-to-rem(900px);
+    margin: 0 auto;
+    margin-top: gap(2xlarge);
+  }
+}

@@ -1,0 +1,26 @@
+@import '../../../styles/abstracts/index';
+
+.c-twitterButton {
+  display: inline-flex;
+  width: px-to-rem(240px);
+  height: px-to-rem(64px);
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background-color: $color-dodger-blue;
+  border-radius: px-to-rem(4px);
+  box-shadow: 0 px-to-rem(4px) 0 0 $color-lochmara;
+  color: $color-white;
+  font-size: $g-font-size-medium;
+  font-weight: 700;
+  line-height: (28 / 18);
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 px-to-rem(1px) 0 0 $color-lochmara;
+    color: $color-white;
+    cursor: pointer;
+    text-decoration: none;
+    transform: translateY(px-to-rem(3px));
+  }
+}

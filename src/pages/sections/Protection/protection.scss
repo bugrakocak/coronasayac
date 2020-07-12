@@ -1,0 +1,13 @@
+@import '../../../styles/abstracts/index';
+
+.protection {
+  padding-top: px-to-rem(96px);
+  padding-bottom: px-to-rem(48px);
+  background-color: $color-mirage;
+
+  &__title {
+    font-size: px-to-rem(32px);
+    font-weight: 700;
+    line-height: (48 / 32);
+  }
+}

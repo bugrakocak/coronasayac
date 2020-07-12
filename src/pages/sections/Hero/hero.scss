@@ -1,0 +1,19 @@
+@import '../../../styles/abstracts/index';
+
+.hero {
+  padding: pad(xlarge) 0 pad(2xlarge) 0;
+  text-align: center;
+
+  &__title {
+    color: $color-white;
+    font-size: px-to-rem(32px);
+    font-weight: 700;
+    line-height: (48 / 32);
+  }
+
+  &__description {
+    color: $color-persimmon;
+    font-size: $g-font-size-medium;
+    line-height: (28 / 18);
+  }
+}
