@@ -43,7 +43,7 @@
     "typescript": "^3.8.3"
   },
   "keywords": [
-    "corona"
+    "corona", "coronasayac", "covid19"
   ],
   "license": "MIT",
   "scripts": {

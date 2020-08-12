@@ -1,3 +1,6 @@
 {
-  "extends": ["@atolye15/stylelint-config", "stylelint-prettier/recommended"]
+  "extends": ["@atolye15/stylelint-config", "stylelint-prettier/recommended"],
+  "rules": {
+    "order/order": [],
+  }
 }

@@ -13,26 +13,6 @@
         "tsx": "never"
       }
     ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": [
-          "src/setupTests.ts",
-          "jest-*.js",
-          "src/**/*.test.tsx",
-          "src/**/*.stories.tsx"
-        ]
-      }
-    ],
     "react/jsx-props-no-spreading": "off"
-  },
-  "overrides": [
-    {
-      "files": ["*.stories.tsx", "*.test.tsx"],
-      "rules": {
-        "@typescript-eslint/no-explicit-any": "off",
-        "no-console": "off"
-      }
-    }
-  ]
+  }
 }
