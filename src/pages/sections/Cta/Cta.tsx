@@ -22,8 +22,10 @@ const Cta = () => {
     );
   }
 
+  const DAY_COUNT_TO_COMPARE = 7;
+
   const { infected: lastInfected } = lastDay;
-  const lastWeekInfected = covidData[covidData.length - 8].infected;
+  const lastWeekInfected = covidData[covidData.length - DAY_COUNT_TO_COMPARE].infected;
   const diff = lastInfected - lastWeekInfected;
 
   const tweetText = `Şu anda Türkiye'de ${lastInfected.toLocaleString(
