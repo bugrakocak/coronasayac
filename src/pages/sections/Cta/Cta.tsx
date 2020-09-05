@@ -8,7 +8,7 @@ import './cta.scss';
 import useApp from '../../../hooks/useApp';
 
 const Cta = () => {
-  const { covidData, lastDay, loading } = useApp();
+  const { covidData, todaysData, loading } = useApp();
 
   if (loading) {
     return <Loader />;
@@ -24,7 +24,7 @@ const Cta = () => {
 
   const DAY_COUNT_TO_COMPARE = 7;
 
-  const { infected: lastInfected } = lastDay;
+  const { infected: lastInfected } = todaysData;
   const lastWeekInfected = covidData[covidData.length - DAY_COUNT_TO_COMPARE].infected;
   const diff = lastInfected - lastWeekInfected;
 

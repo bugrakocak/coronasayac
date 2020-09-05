@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { format } from 'date-fns';
 import { Line } from 'react-chartjs-2';
 
 import Loader from '../../../../components/Loader/Loader';
 import useApp from '../../../../hooks/useApp';
 import { CovidDataDaily } from '../../../../services/api/types';
+import formatDateKey from '../../../../utils/formatDateKey';
 
 export type ChartType = 'confirmed' | 'death' | 'recovered';
 
@@ -59,20 +59,20 @@ const CaseChart: FC<Props> = ({ width, height, type = 'confirmed' }) => {
     );
   }
 
-  const getFieldFromKey = (field: keyof CovidDataDaily): (string | number)[] => {
+  const getFieldByKey = (field: keyof CovidDataDaily): (string | number)[] => {
     return covidData.map(d => d[field]);
   };
 
-  const confirmedData = getFieldFromKey('infected');
-  const deathData = getFieldFromKey('deceased');
-  const recoveredData = getFieldFromKey('recovered');
-  const dates = getFieldFromKey('lastUpdatedAtApify');
+  const confirmedData = getFieldByKey('infected');
+  const deathData = getFieldByKey('deceased');
+  const recoveredData = getFieldByKey('recovered');
+  const dates = getFieldByKey('date');
 
   chartTypes.confirmed.data = sliceData(confirmedData.map(d => Number(d)));
   chartTypes.death.data = sliceData(deathData.map(d => Number(d)));
   chartTypes.recovered.data = sliceData(recoveredData.map(d => Number(d)));
 
-  const formattedDates = dates.map(d => format(new Date(d), 'dd/MM/yy'));
+  const formattedDates = dates.map(d => formatDateKey(d.toString()));
   const dataLabels = sliceData(formattedDates);
 
   const { color, data, label } = chartTypes[type];

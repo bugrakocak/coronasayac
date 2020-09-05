@@ -13,7 +13,7 @@ const useData = () => {
         const data = await api.covidData();
         setCovidData(data);
       } catch (error) {
-        throw new Error();
+        throw new Error(error);
       } finally {
         setLoading(false);
       }

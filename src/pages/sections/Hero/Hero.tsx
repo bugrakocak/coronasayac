@@ -1,6 +1,4 @@
 import React from 'react';
-import { format } from 'date-fns';
-import tr from 'date-fns/locale/tr';
 
 import useApp from '../../../hooks/useApp';
 
@@ -8,9 +6,10 @@ import Stats from '../Stats/Stats';
 import Loader from '../../../components/Loader/Loader';
 
 import './hero.scss';
+import formatDateKey from '../../../utils/formatDateKey';
 
 const Hero = () => {
-  const { covidData, lastDay, loading } = useApp();
+  const { covidData, todaysData, loading } = useApp();
 
   if (loading) {
     return <Loader />;
@@ -24,17 +23,13 @@ const Hero = () => {
     );
   }
 
-  const { deceased: deaths, infected: cases, recovered, lastUpdatedAtApify } = lastDay;
-
-  const lastUpdate = format(new Date(lastUpdatedAtApify), 'dd MMMM yyyy HH:mm', {
-    locale: tr,
-  });
+  const { deceased: deaths, infected: cases, recovered, date } = todaysData;
 
   return (
     <div className="hero">
       <div className="container">
         <h1 className="hero__title u-margin-ends-0">Corona Virüs Türkiye Güncel İstatistikleri</h1>
-        <p className="hero__description">Son güncelleme: {lastUpdate} (İstanbul)</p>
+        <p className="hero__description">Son veri tarihi: {formatDateKey(date, true)}</p>
         <Stats
           className="u-margin-top-xlarge"
           confirmed={cases}

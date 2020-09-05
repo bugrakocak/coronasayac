@@ -1,12 +1,26 @@
+export interface OverallData {
+  cases: number;
+  recovered: number;
+  deaths: number;
+  updated: string;
+}
+
+interface HistoricalCountry {
+  country: string;
+  timeline: {
+    [key in 'cases' | 'recovered' | 'deaths']: {
+      [key: string]: number;
+    };
+  };
+}
+
+export type HistoricalData = HistoricalCountry[];
+
 export interface CovidDataDaily {
-  tested: number;
+  date: string;
   infected: number;
   deceased: number;
   recovered: number;
-  sourceUrl: string;
-  lastUpdatedAtSource: string;
-  lastUpdatedAtApify: string;
-  readme: string;
 }
 
 export type CovidData = CovidDataDaily[];
