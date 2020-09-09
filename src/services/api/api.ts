@@ -42,7 +42,7 @@ const flatData = (data: [HistoricalData, OverallData]) => {
   const { cases, deaths, recovered } = countryHistoricalData.timeline;
   const timelineDays = Object.keys(cases);
   const timelineLastDay = timelineDays[timelineDays.length - 1];
-  const timelineLastDayCases = timelineLastDay[timelineLastDay.length - 1];
+  const timelineLastDayCases = cases[timelineLastDay];
 
   const flatten = timelineDays.map(d => {
     return {
@@ -55,7 +55,7 @@ const flatData = (data: [HistoricalData, OverallData]) => {
 
   // Historical data API adds today's data little bit late
   // So we merge today's data to historical if it is not include today
-  if (Number(timelineLastDayCases) < overallTotalCases) {
+  if (timelineLastDayCases < overallTotalCases) {
     const nextDay = dateToDataKey(parseAndGetNextDay(timelineLastDay));
     return [
       ...flatten,
