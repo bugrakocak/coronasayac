@@ -3,12 +3,12 @@
 .stats {
   display: grid;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     grid-template-columns: 1fr 1fr 1fr;
     gap: px-to-rem(2px);
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     grid-template-columns: 1fr;
     gap: px-to-rem(16px);
   }
