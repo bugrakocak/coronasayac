@@ -26,8 +26,7 @@ const dateToDataKey = (_date: Date) => {
   const month = _date.getMonth();
   const year = _date.getFullYear();
 
-  const dataKey = `${month}/${date}/${year.toString().substr(2, 2)}`;
-  return dataKey;
+  return `${month}/${date}/${year.toString().substr(2, 2)}`;
 };
 
 const flatData = (data: [HistoricalData, OverallData]) => {
@@ -53,8 +52,10 @@ const flatData = (data: [HistoricalData, OverallData]) => {
     };
   });
 
-  // Historical data API adds today's data little bit late
-  // So we merge today's data to historical if it is not include today
+  //
+  // Historical data API attach today's data with a delay
+  // So we merge today's data to historical data if it doesn't exist
+  //
   if (timelineLastDayCases < overallTotalCases) {
     const nextDay = dateToDataKey(parseAndGetNextDay(timelineLastDay));
     return [
