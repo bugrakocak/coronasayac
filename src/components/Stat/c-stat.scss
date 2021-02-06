@@ -7,9 +7,9 @@
 
   &__number {
     color: var(--stat-color, #{$color-white});
-    font-size: px-to-rem(64px);
+    font-size: px-to-rem(48px);
     font-weight: 900;
-    line-height: (72 / 64);
+    line-height: (54 / 48);
   }
 
   &__text {
